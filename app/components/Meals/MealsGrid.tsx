@@ -5,7 +5,7 @@ import MealItem from "./MealItem";
 type MealsGridProps = {
   meals: Meal[];
 };
-export default function MealsGrid({ meals }: MealsGridProps) {
+export default function MealsGrid({ meals = [] }: MealsGridProps) {
   return (
     <ul className={styles.meals}>
       {meals.map((meal) => (

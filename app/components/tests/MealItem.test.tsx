@@ -11,6 +11,19 @@ const PROPS = {
 };
 
 describe("<MealItem />", () => {
+  it("renders with default props", () => {
+    render(
+      <MealItem
+        id={""}
+        title={""}
+        slug={""}
+        image={""}
+        summary={""}
+        creator={""}
+      />
+    );
+    expect(screen.getByRole("article")).toBeInTheDocument();
+  });
   it("renders with required props", () => {
     render(<MealItem {...PROPS} />);
     expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
