@@ -1,16 +1,11 @@
 import Link from "next/link";
 import styles from "./page.module.css";
-import MealsGrid from "../components/Meals/MealsGrid";
-import { sql } from "@/db";
+// import { Suspense } from "react";
 
-const fetchMeals = async () => {
-  //await new Promise((resolve) => setTimeout(resolve, 5000));
-  const res = await sql("select * from meals");
-  return res.rows;
-};
-export default async function MealsPage() {
-  const meals = await fetchMeals();
+import Meals from "../components/Meals/Meals";
+// import LoadingMeals from "./LoadingMeals";
 
+export default function MealsPage() {
   return (
     <>
       <header className={styles.header}>
@@ -24,7 +19,9 @@ export default async function MealsPage() {
         </p>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={meals} />
+        {/* <Suspense fallback={<LoadingMeals />}> */}
+        <Meals />
+        {/* </Suspense> */}
       </main>
     </>
   );
