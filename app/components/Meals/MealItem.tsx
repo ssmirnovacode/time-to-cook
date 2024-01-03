@@ -5,12 +5,13 @@ import styles from "./meal-item.module.css";
 import { Meal } from "@/app/types";
 
 export default function MealItem({
-  title,
-  slug,
-  image,
-  summary,
-  creator,
+  title = "",
+  slug = "",
+  image = "",
+  summary = "",
+  creator = "",
 }: Meal) {
+  // TODO handle case of missing data
   return (
     <article className={styles.meal}>
       <header>
