@@ -2,6 +2,7 @@ import ImagePicker from "@/app/components/ImagePicker/ImagePicker";
 import styles from "./page.module.css";
 import { saveMeal } from "@/app/services/meals";
 import { redirect } from "next/navigation";
+import MealFormSubmit from "@/app/components/Meals/MealFormSubmit";
 
 export default function ShareMealPage() {
   // can be moved to separate file to be used in a client component
@@ -66,7 +67,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label={"Your image"} name="image" />
           <p className={styles.actions}>
-            <button type="submit">Share Meal</button>
+            <MealFormSubmit />
           </p>
         </form>
       </main>
