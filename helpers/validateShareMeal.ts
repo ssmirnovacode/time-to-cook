@@ -1,7 +1,4 @@
-export type ErrorItem = {
-  field: string;
-  error: string;
-};
+import { VALIDATION_ERRORS } from "./constants";
 
 export type ParsedFormData = {
   title: string;
@@ -14,7 +11,12 @@ export type ParsedFormData = {
 
 type Label = keyof ParsedFormData;
 
-const myKey: Label = "title";
+export type ErrorItem = {
+  field: Label;
+  error: string;
+};
+
+//const myKey: Label = "title";
 
 export type Entry = [Label, string | File];
 
@@ -44,28 +46,28 @@ export function validateShareMeal(
   else return { values };
 }
 
-function checkForEmptyFields(entries: Entry[]): ErrorItem[] {
+export function checkForEmptyFields(entries: Entry[]): ErrorItem[] {
   const errors: ErrorItem[] = [];
-  entries.forEach(([key, value]) => {
-    if (!value) errors.push({ field: key, error: "This field is required" });
+  entries.forEach(([key, value]: Entry) => {
+    if (!value) errors.push({ field: key, error: VALIDATION_ERRORS.REQUIRED });
   });
 
   return errors;
 }
 
-function checkForInvalidInputs(entries: Entry[]): ErrorItem[] {
+export function checkForInvalidInputs(entries: Entry[]): ErrorItem[] {
   const errors: ErrorItem[] = [];
-  entries.forEach(([key, value]) => {
+  entries.forEach(([key, value]: Entry) => {
     if (typeof value === "string" && value.length < 3)
-      errors.push({ field: key, error: "Must have minimum 3 characters" });
+      errors.push({ field: key, error: VALIDATION_ERRORS.MIN_CHARS });
     if (
       typeof value === "string" &&
       value.length > 30 &&
-      key === "instructions"
+      key !== "instructions"
     )
-      errors.push({ field: key, error: "Must have maximum 30 characters" });
+      errors.push({ field: key, error: VALIDATION_ERRORS.MAX_CHARS });
     if (key === "creator_email" && !isValidEmail(value as string))
-      errors.push({ field: key, error: "Invalid email" });
+      errors.push({ field: key, error: VALIDATION_ERRORS.INVALID_EMAIL });
 
     if (
       typeof value === "string" &&
@@ -74,17 +76,17 @@ function checkForInvalidInputs(entries: Entry[]): ErrorItem[] {
     )
       errors.push({
         field: key,
-        error: "Can only contain letters, spaces and '-'",
+        error: VALIDATION_ERRORS.INVALID_CHARS,
       });
     if (typeof value === "object" && value.size > 500000) {
-      errors.push({ field: key, error: "Max image size is 500Kb" });
+      errors.push({ field: key, error: VALIDATION_ERRORS.INVALID_SIZE });
     }
 
     if (
       typeof value === "object" &&
       !acceptedImageFormats.includes(value.type)
     ) {
-      errors.push({ field: key, error: "Only .PNG and .JPEG images allowed" });
+      errors.push({ field: key, error: VALIDATION_ERRORS.INVALID_FORMAT });
     }
   });
   return errors;
