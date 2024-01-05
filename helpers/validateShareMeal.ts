@@ -16,8 +16,6 @@ export type ErrorItem = {
   error: string;
 };
 
-//const myKey: Label = "title";
-
 export type Entry = [Label, string | File];
 
 const acceptedImageFormats = ["image/png", "image/jpeg"];
@@ -38,26 +36,18 @@ export function validateShareMeal(
 
   const entries = Object.entries(values) as Entry[];
 
-  const emptyFieldErrors = checkForEmptyFields(entries);
-  if (emptyFieldErrors.length) return { errors: emptyFieldErrors };
-
   const validationErrors = checkForInvalidInputs(entries);
   if (validationErrors.length) return { errors: validationErrors };
   else return { values };
 }
 
-export function checkForEmptyFields(entries: Entry[]): ErrorItem[] {
-  const errors: ErrorItem[] = [];
-  entries.forEach(([key, value]: Entry) => {
-    if (!value) errors.push({ field: key, error: VALIDATION_ERRORS.REQUIRED });
-  });
-
-  return errors;
-}
-
 export function checkForInvalidInputs(entries: Entry[]): ErrorItem[] {
   const errors: ErrorItem[] = [];
-  entries.forEach(([key, value]: Entry) => {
+  for (const [key, value] of entries) {
+    if (!value) {
+      errors.push({ field: key, error: VALIDATION_ERRORS.REQUIRED });
+      continue;
+    }
     if (typeof value === "string" && value.length < 3)
       errors.push({ field: key, error: VALIDATION_ERRORS.MIN_CHARS });
     if (
@@ -88,7 +78,7 @@ export function checkForInvalidInputs(entries: Entry[]): ErrorItem[] {
     ) {
       errors.push({ field: key, error: VALIDATION_ERRORS.INVALID_FORMAT });
     }
-  });
+  }
   return errors;
 }
 
@@ -102,8 +92,4 @@ function isValidText(text: string): boolean {
   const pattern = /[^a-zA-Z\s-]/g;
 
   return !pattern.test(text);
-}
-
-export function cleanWeirdChars(inputString: string): string {
-  return inputString.replace(/[^a-zA-Z\s-]/g, "");
 }
