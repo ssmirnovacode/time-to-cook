@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { saveMeal } from "@/app/services/meals";
 import { redirect } from "next/navigation";
 import MealFormSubmit from "@/app/components/Meals/MealFormSubmit";
+import { revalidatePath } from "next/cache";
 
 export default function ShareMealPage() {
   // can be moved to separate file to be used in a client component
@@ -17,11 +18,11 @@ export default function ShareMealPage() {
       creator: formData.get("name") as string,
       creator_email: formData.get("email") as string,
     };
-    //console.log("meal", meal);
 
     const result = await saveMeal(meal);
 
     if (result) {
+      revalidatePath("/meals");
       redirect("/meals");
     } else {
       // TODO show error
