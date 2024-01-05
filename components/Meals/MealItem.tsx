@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./MealItem.module.css";
-import { Meal } from "@/app/types";
+import { Meal } from "@/types";
 
 export default function MealItem({
   title = "",

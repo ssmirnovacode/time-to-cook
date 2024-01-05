@@ -1,4 +1,4 @@
-import { Meal } from "@/app/types";
+import { Meal } from "@/types";
 import styles from "./MealsGrid.module.css";
 import MealItem from "./MealItem";
 

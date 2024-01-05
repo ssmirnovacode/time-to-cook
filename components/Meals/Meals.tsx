@@ -1,5 +1,5 @@
 import MealsGrid from "./MealsGrid";
-import { fetchMeals } from "@/app/services/meals";
+import { fetchMeals } from "@/services/meals";
 
 export default async function Meals() {
   const meals = await fetchMeals();

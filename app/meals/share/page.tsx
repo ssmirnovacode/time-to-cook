@@ -1,9 +1,9 @@
-import ImagePicker from "@/app/components/ImagePicker/ImagePicker";
 import styles from "./page.module.css";
-import { saveMeal } from "@/app/services/meals";
+import { saveMeal } from "@/services/meals";
 import { redirect } from "next/navigation";
-import MealFormSubmit from "@/app/components/Meals/MealFormSubmit";
 import { revalidatePath } from "next/cache";
+import ImagePicker from "@/components/ImagePicker/ImagePicker";
+import MealFormSubmit from "@/components/Meals/MealFormSubmit";
 
 export default function ShareMealPage() {
   // can be moved to separate file to be used in a client component

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import Meals from "@/components/Meals/Meals";
 // import { Suspense } from "react";
 
-import Meals from "../components/Meals/Meals";
 // import LoadingMeals from "./LoadingMeals";
 
 export default function MealsPage() {
