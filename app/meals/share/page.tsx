@@ -4,29 +4,27 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import ImagePicker from "@/components/ImagePicker/ImagePicker";
 import MealFormSubmit from "@/components/Meals/MealFormSubmit";
+import { validateShareMeal } from "@/helpers/validateShareMeal";
 
 export default function ShareMealPage() {
   // can be moved to separate file to be used in a client component
   async function shareMeal(formData: FormData) {
     "use server";
 
-    const meal = {
-      title: formData.get("title") as string,
-      summary: formData.get("summary") as string,
-      instructions: formData.get("instructions") as string,
-      image: formData.get("image") as File,
-      creator: formData.get("name") as string,
-      creator_email: formData.get("email") as string,
-    };
+    const { values, errors } = validateShareMeal(formData);
 
-    const result = await saveMeal(meal);
+    console.log("values", values);
+    console.log("errors", errors);
+    return;
 
-    if (result) {
-      revalidatePath("/meals");
-      redirect("/meals");
-    } else {
-      // TODO show error
-    }
+    // const result = await saveMeal(values);
+
+    // if (result) {
+    //   revalidatePath("/meals");
+    //   redirect("/meals");
+    // } else {
+    //   // TODO show error
+    // }
   }
 
   return (
@@ -42,20 +40,20 @@ export default function ShareMealPage() {
           <div className={styles.row}>
             <p>
               <label htmlFor="name">Your name</label>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" />
             </p>
             <p>
               <label htmlFor="email">Your email</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" />
             </p>
           </div>
           <p>
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" name="title" required />
+            <input type="text" id="title" name="title" />
           </p>
           <p>
             <label htmlFor="summary">Short Summary</label>
-            <input type="text" id="summary" name="summary" required />
+            <input type="text" id="summary" name="summary" />
           </p>
           <p>
             <label htmlFor="instructions">Instructions</label>
@@ -63,7 +61,6 @@ export default function ShareMealPage() {
               id="instructions"
               name="instructions"
               rows={10}
-              required
             ></textarea>
           </p>
           <ImagePicker label={"Your image"} name="image" />
