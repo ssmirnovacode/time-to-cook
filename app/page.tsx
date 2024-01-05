@@ -24,29 +24,29 @@ export default function Home() {
         <section className={styles.section}>
           <h2>How it works</h2>
           <p>
-            Burgertime is a platform dedicated to burger enthusiasts, offering a
-            space to share and explore mouthwatering burger recipes. It&apos;s a
-            hub where you can uncover exciting new burger creations and connect
-            with fellow burger lovers.
+            Time To Cook is a platform dedicated to cooking enthusiasts,
+            offering a space to share and explore mouthwatering recipes.
+            It&apos;s a hub where you can uncover exciting new creations and
+            connect with fellow food lovers.
           </p>
           <p>
-            Burgertime is not just a platform; it&apos;s a community where the
-            joy of burgers brings people together, making it the perfect place
-            to share, discover, and celebrate the world of delicious burgers.
+            Time To Cook is not just a platform; it&apos;s a community where the
+            joy of cooking brings people together, making it the perfect place
+            to share, discover, and celebrate the world of delicious meals.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>Why Burgertime?</h2>
+          <h2>Why Time To Cook?</h2>
           <p>
-            Burgertime provides a unique space for burger aficionados to
+            Time To Cook provides a unique space for food aficionados to
             showcase their favorite recipes with a global audience. It&apos;s
             more than just a platform; it&apos;s a vibrant community where the
-            love for burgers creates lasting connections among food enthusiasts.
+            love for food creates lasting connections among food enthusiasts.
           </p>
           <p>
             Whether you&apos;re a seasoned burger chef or just starting your
-            culinary journey, Burgertime is the ideal destination to discover
+            culinary journey, Time To Cook is the ideal destination to discover
             new and exciting burger creations while connecting with like-minded
             individuals who share your passion for the perfect patty.
           </p>

@@ -12,7 +12,7 @@ export default function MainHeader() {
       <header className={styles.header}>
         <Link href="/" className={styles.logo}>
           <Image src={logoImg.src} alt="logo" width={50} height={50} priority />
-          Burgertime
+          Time To Cook
         </Link>
 
         <nav className={styles.nav}>
@@ -21,7 +21,7 @@ export default function MainHeader() {
               <NavLink href="/meals">Browse meals</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Burgertime community</NavLink>
+              <NavLink href="/community">Time To Cook community</NavLink>
             </li>
           </ul>
         </nav>
