@@ -4,6 +4,23 @@ import { getMeal } from "@/services/meals";
 import { Meal } from "@/types";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({
+  params: { slug = "" },
+}: {
+  params: { slug: string };
+}) {
+  const meal: Meal = await getMeal(slug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailsPage({
   params: { slug = "" },
 }: {
