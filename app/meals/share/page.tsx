@@ -1,34 +1,9 @@
 import styles from "./page.module.css";
-import { saveMeal } from "@/services/meals";
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
 import ImagePicker from "@/components/ImagePicker/ImagePicker";
 import MealFormSubmit from "@/components/Meals/MealFormSubmit";
+import { shareMeal } from "@/services/server-actions";
 
 export default function ShareMealPage() {
-  // can be moved to separate file to be used in a client component
-  async function shareMeal(formData: FormData) {
-    "use server";
-
-    const meal = {
-      title: formData.get("title") as string,
-      summary: formData.get("summary") as string,
-      instructions: formData.get("instructions") as string,
-      image: formData.get("image") as File,
-      creator: formData.get("name") as string,
-      creator_email: formData.get("email") as string,
-    };
-
-    const result = await saveMeal(meal);
-
-    if (result) {
-      revalidatePath("/meals");
-      redirect("/meals");
-    } else {
-      // TODO show error
-    }
-  }
-
   return (
     <>
       <header className={styles.header}>
