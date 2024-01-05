@@ -9,6 +9,8 @@ const MEALS = [
     image: "https://imgs.com/burger.jpeg",
     summary: "Amazing",
     creator: "Svetlana",
+    creator_email: "svetlana@mail.com",
+    instructions: "Just cook it",
   },
   {
     id: "1235",
@@ -17,6 +19,8 @@ const MEALS = [
     image: "https://imgs.com/burger2.jpeg",
     summary: "Amazing burger2",
     creator: "Svetlana",
+    creator_email: "svetlana@mail.com",
+    instructions: "Just cook it again",
   },
 ];
 describe("<MealsGrid />", () => {

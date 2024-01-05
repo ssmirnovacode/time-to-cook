@@ -8,6 +8,8 @@ const PROPS = {
   image: "https://imgs.com/burger.jpeg",
   summary: "Amazing",
   creator: "Svetlana",
+  creator_email: "svetlana@mail.com",
+  instructions: "Just cook it",
 };
 
 describe("<MealItem />", () => {
@@ -20,6 +22,8 @@ describe("<MealItem />", () => {
         image={""}
         summary={""}
         creator={""}
+        creator_email=""
+        instructions=""
       />
     );
     expect(screen.getByRole("article")).toBeInTheDocument();
