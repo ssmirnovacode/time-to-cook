@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import ImageSlideshow from "@/components/Images/ImagesSlideshow";
+import ButtonLink from "@/components/common/ButtonLink";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
             <p>Enjoy all the variety of our delicious stuff</p>
           </div>
           <div className={styles.cta}>
-            <Link href="/community">Join the community</Link>
-            <Link href="/meals">Explore our meals</Link>
+            <ButtonLink endpoint="/community" label="Join the community" />
+            <ButtonLink endpoint="/meals" label="Explore our meals" />
           </div>
         </div>
       </header>

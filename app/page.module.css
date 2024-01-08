@@ -31,11 +31,11 @@
   .cta {
     font-size: 1.5rem;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
   
   .cta a {
-    display: inline-block;
+    display: flex;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;

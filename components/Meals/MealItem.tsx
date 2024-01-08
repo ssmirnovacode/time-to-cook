@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./MealItem.module.css";
 import { Meal } from "@/types";
+import ButtonLink from "../common/ButtonLink";
 
 export default function MealItem({
   title = "",
@@ -26,7 +26,8 @@ export default function MealItem({
       <div className={styles.content}>
         <p className={styles.summary}>{summary}</p>
         <div className={styles.actions}>
-          <Link href={`/meals/${slug}`}>View Details</Link>
+          {/* <Link href={`/meals/${slug}`}>View Details</Link> */}
+          <ButtonLink endpoint={`/meals/${slug}`} label="View Details" />
         </div>
       </div>
     </article>
