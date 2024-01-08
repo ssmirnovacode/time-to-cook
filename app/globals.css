@@ -13,7 +13,19 @@ body {
   background: radial-gradient(#282c34, #282c34);
 }
 
+:root {
+  /* colors */
+  --color-highlight-light: #ffc905;
+  --color-highlight-base: #f9b241;
+  --color-highlight-dark: #ff9b05;
+  /* --color-accent-light: #f9572a; */
+  --color-accent: #fd4715;
+  
+  --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));
+  --gradient-btn: linear-gradient(90deg, var(--color-accent), var(--color-highlight-base));
+  --gradient-btn-active: linear-gradient(90deg, var(--color-accent), var(--color-highlight-dark));
 
+}
 
 .not-found,
 .error {

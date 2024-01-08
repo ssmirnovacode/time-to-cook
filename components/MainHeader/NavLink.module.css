@@ -1,5 +1,5 @@
 .active {
-    background: linear-gradient(90deg, #ff8a05, #f9b331);
+    background: var(--gradient-btn);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

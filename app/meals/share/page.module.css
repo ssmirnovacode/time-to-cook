@@ -12,7 +12,7 @@
   }
   
   .highlight {
-    background: linear-gradient(90deg, #f9572a, #ff8a05);
+    background: var(--gradient-btn-active);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,7 +74,7 @@
   .actions button {
     border: 0;
     padding: 0.75rem 2rem;
-    background: linear-gradient(90deg, #f9572a, #ff9b05);
+    background: var(--gradient-btn);
     border: none;
     color: #ffffff;
     border-radius: 2px;
@@ -86,7 +86,7 @@
   
   .actions button:hover,
   .actions button:focus {
-    background: linear-gradient(90deg, #fd4715, #f9b241);
+    background: var(--gradient-btn-active);
   }
   
   .actions button:disabled,
