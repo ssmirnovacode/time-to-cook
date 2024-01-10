@@ -16,12 +16,13 @@ export default function MainHeader() {
         </Link>
 
         <nav className={styles.nav}>
-          <ul>
+          <div className={styles.nav_burger}>&#8801;</div>
+          <ul className={styles.nav_panel}>
             <li>
               <NavLink href="/meals">Browse meals</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Time To Cook community</NavLink>
+              <NavLink href="/community">Community</NavLink>
             </li>
           </ul>
         </nav>
