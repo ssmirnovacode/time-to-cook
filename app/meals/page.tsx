@@ -10,10 +10,10 @@ export default function MealsPage() {
     <>
       <header className={styles.header}>
         <h1>
-          Fabulous burgers crafted{" "}
+          Fabulous dishes crafted{" "}
           <span className={styles.highlight}>by you</span>
         </h1>
-        <p>Select your favourite burger and order it or cook it at home</p>
+        <p>Select your favourite meal and cook it at home</p>
         <p className={styles.cta}>
           <ButtonLink endpoint="/meals/share" label="Share your best recipe" />
         </p>
