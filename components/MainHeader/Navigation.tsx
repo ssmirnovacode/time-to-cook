@@ -19,7 +19,6 @@ export default function Navigation() {
   }
 
   function handleClickOutside(event: MouseEvent) {
-    event.stopPropagation();
     if (navRef.current && !navRef.current.contains(event.target as Node)) {
       setIsOpen(false);
     }
@@ -27,10 +26,14 @@ export default function Navigation() {
 
   return (
     <nav className={styles.nav} ref={navRef}>
-      <div className={styles.nav_burger} onClick={handleBurgerClick}>
+      <div
+        className={styles.nav_burger}
+        onClick={handleBurgerClick}
+        role="toggle navigation"
+      >
         &#8801;
       </div>
-      <ul className={styles.nav_panel}>
+      <ul className={styles.nav_panel} role="navigation panel">
         <li>
           <NavLink href="/meals">Browse meals</NavLink>
         </li>
