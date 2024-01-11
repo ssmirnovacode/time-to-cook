@@ -7,6 +7,7 @@
   --color-highlight-dark: #ff9b05;
   /* --color-accent-light: #f9572a; */
   --color-accent: #fd4715;
+  --color-white: #ddd6cb;
   
   --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));
   --gradient-btn: linear-gradient(90deg, var(--color-accent), var(--color-highlight-base));

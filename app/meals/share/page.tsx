@@ -10,29 +10,29 @@ export default function ShareMealPage() {
         <h1>
           Share your <span className={styles.highlight}>favorite meal</span>
         </h1>
-        <p>Or any other meal you feel needs sharing!</p>
+        <div>Or any other meal you feel needs sharing!</div>
       </header>
       <main className={styles.main}>
         <form className={styles.form} action={shareMeal}>
           <div className={styles.row}>
-            <p>
+            <div className={styles.field}>
               <label htmlFor="name">Your name</label>
               <input type="text" id="name" name="name" required />
-            </p>
-            <p>
+            </div>
+            <div className={styles.field}>
               <label htmlFor="email">Your email</label>
               <input type="email" id="email" name="email" required />
-            </p>
+            </div>
           </div>
-          <p>
+          <div className={styles.field}>
             <label htmlFor="title">Title</label>
             <input type="text" id="title" name="title" required />
-          </p>
-          <p>
+          </div>
+          <div className={styles.field}>
             <label htmlFor="summary">Short Summary</label>
             <input type="text" id="summary" name="summary" required />
-          </p>
-          <p>
+          </div>
+          <div className={styles.field}>
             <label htmlFor="instructions">Instructions</label>
             <textarea
               id="instructions"
@@ -40,11 +40,11 @@ export default function ShareMealPage() {
               rows={10}
               required
             ></textarea>
-          </p>
+          </div>
           <ImagePicker label={"Your image"} name="image" />
-          <p className={styles.actions}>
+          <div className={styles.actions}>
             <MealFormSubmit />
-          </p>
+          </div>
         </form>
       </main>
     </>

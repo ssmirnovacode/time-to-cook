@@ -10,7 +10,7 @@
   display: block;
   text-align: center;
   margin-top: 15%;
-  color: #ddd6cb;
+  color: var(--color-white);
   font-size: 4rem;
 }
 .nav ul {
@@ -25,7 +25,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #ddd6cb;
+  color: var(--color-white);
   font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -37,7 +37,7 @@
   justify-content: center;
   gap: 1rem;
   text-decoration: none;
-  color: #ddd6cb;
+  color: var(--color-white);
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.15rem;
@@ -79,7 +79,7 @@
   
   .nav a {
     text-decoration: none;
-    color: #ddd6cb;
+    color: var(--color-white);
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -102,7 +102,7 @@
       justify-content: center;
       gap: 2rem;
       text-decoration: none;
-      color: #ddd6cb;
+      color: var(--color-white);
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 0.15rem;
