@@ -1,10 +1,10 @@
 .header {
-    gap: 3rem;
+    gap: 2rem;
     margin: 3rem auto 5rem auto;
     width: 90%;
-    max-width: 75rem;
+    max-width: 90vw;
     color: #ddd6cb;
-    font-size: 1.5rem;
+    font-size: .8rem;
     text-align: center;
   }
   
@@ -28,8 +28,8 @@
   
   .main h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
     color: #ddd6cb;
   }
   
@@ -54,8 +54,23 @@
   
   .perks p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin: 0;
     color: #ddd6cb;
   }
+ 
+@media screen and (min-width: 900px) {
+  .header {
+    gap: 3rem;
+    margin: 3rem auto 5rem auto;
+    width: 90%;
+    max-width: 75rem;
+    font-size: 1.5rem;
+  }
+
+  .main h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+}
