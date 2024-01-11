@@ -93,6 +93,11 @@
       width: 90%;
       max-width: 75rem;
     }
+
+    .header_info {
+      width: auto;
+      text-align: left;
+    }
     
     .slideshow {
       width: 40rem;
@@ -111,10 +116,14 @@
       font-size: 1.5rem;
       display: flex;
       gap: 2rem;
+      justify-content: start;
     }
     
     .section {
       font-size: 1.5rem;
       width: 90%;
+      max-width: auto;
+      text-align: left;
+      margin: auto;
     }
   }
