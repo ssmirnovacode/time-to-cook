@@ -2,12 +2,12 @@
 
 :root {
   /* colors */
-  --color-highlight-light: #ffc905;
-  --color-highlight-base: #f9b241;
-  --color-highlight-dark: #ff9b05;
-  /* --color-accent-light: #f9572a; */
-  --color-accent: #fd4715;
-  --color-white: #ddd6cb;
+  --color-highlight-light: #f9b331;
+  --color-highlight-base: #128f09;
+  --color-highlight-dark: hsl(132, 74%, 36%);
+  --color-accent-light: #ff8a05;
+  --color-accent: #fd3415;
+  --color-white: #dad8d5;
   --background: radial-gradient(#282c34, #282c34);
   
   --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));

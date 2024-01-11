@@ -68,11 +68,11 @@
     
     .nav a:hover,
     .nav a:active {
-      background: var(--gradient-btn);
+      background: linear-gradient(90deg, var(--color-accent-light), var(--color-highlight-light));
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+      text-shadow: 0 0 18px rgb(234, 248, 42);
     }
 
     .nav ul.nav_drawer {
