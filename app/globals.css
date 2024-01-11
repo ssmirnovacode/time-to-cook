@@ -8,6 +8,7 @@
   /* --color-accent-light: #f9572a; */
   --color-accent: #fd4715;
   --color-white: #ddd6cb;
+  --background: radial-gradient(#282c34, #282c34);
   
   --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));
   --gradient-btn: linear-gradient(90deg, var(--color-accent), var(--color-highlight-base));
@@ -26,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(#282c34, #282c34);
+  background: var(--background);
 }
 
 

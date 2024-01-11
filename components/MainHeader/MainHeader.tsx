@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./MainHeader.module.css";
 import MainHeaderBG from "./MainHeaderBG";
 import NavLink from "./NavLink";
+import Navigation from "./Navigation";
 
 export default function MainHeader() {
   return (
@@ -15,17 +16,7 @@ export default function MainHeader() {
           Time To Cook
         </Link>
 
-        <nav className={styles.nav}>
-          <div className={styles.nav_burger}>&#8801;</div>
-          <ul className={styles.nav_panel}>
-            <li>
-              <NavLink href="/meals">Browse meals</NavLink>
-            </li>
-            <li>
-              <NavLink href="/community">Community</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
       </header>
     </>
   );
