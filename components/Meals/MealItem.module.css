@@ -7,7 +7,7 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    color: #ddd6cb;
+    color: var(--color-white);
     background: linear-gradient(90deg, #2c1e19, #25200f);
   }
   
@@ -63,7 +63,7 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background: var(--gradient-btn-active);
-    color: #ffffff;
+    color: var(--color-white);
     font-weight: bold;
     text-decoration: none;
   }

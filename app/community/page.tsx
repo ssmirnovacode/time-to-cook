@@ -10,7 +10,7 @@ export default function CommunityPage() {
     <>
       <header className={styles.header}>
         <h1>
-          One common passion: <span className={styles.highlight}>BURGERS</span>
+          One common passion: <span className={styles.highlight}>FOOD</span>
         </h1>
         <p>Join our club and share your best recipes!</p>
       </header>

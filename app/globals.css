@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  /* colors */
+  --color-highlight-light: #ffc905;
+  --color-highlight-base: #f9b241;
+  --color-highlight-dark: #ff9b05;
+  /* --color-accent-light: #f9572a; */
+  --color-accent: #fd4715;
+  --color-white: #ddd6cb;
+  --background: radial-gradient(#282c34, #282c34);
+  
+  --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));
+  --gradient-btn: linear-gradient(90deg, var(--color-accent), var(--color-highlight-base));
+  --gradient-btn-active: linear-gradient(90deg, var(--color-accent), var(--color-highlight-dark));
+
+  /* breakpoints */
+  --desktop: 1010px;
+}
 * {
   box-sizing: border-box;
 }
@@ -10,22 +27,10 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(#282c34, #282c34);
+  background: var(--background);
 }
 
-:root {
-  /* colors */
-  --color-highlight-light: #ffc905;
-  --color-highlight-base: #f9b241;
-  --color-highlight-dark: #ff9b05;
-  /* --color-accent-light: #f9572a; */
-  --color-accent: #fd4715;
-  
-  --gradient-main: linear-gradient(90deg, var(--color-accent), var(--color-highlight-light));
-  --gradient-btn: linear-gradient(90deg, var(--color-accent), var(--color-highlight-base));
-  --gradient-btn-active: linear-gradient(90deg, var(--color-accent), var(--color-highlight-dark));
 
-}
 
 .not-found,
 .error {

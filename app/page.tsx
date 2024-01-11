@@ -10,7 +10,7 @@ export default function Home() {
         <div className={styles.slideshow}>
           <ImageSlideshow />
         </div>
-        <div>
+        <div className={styles.header_info}>
           <div className={styles.hero}>
             <h1>Taking burgers to the next level</h1>
             <p>Enjoy all the variety of our delicious stuff</p>
