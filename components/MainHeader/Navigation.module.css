@@ -6,6 +6,10 @@
     font-size: 4rem;
   }
 
+  .nav {
+    max-width: 100vw;
+  }
+
   .nav ul {
     display: none;
     list-style: none;
@@ -32,15 +36,16 @@
     bottom: -4rem;
     right: 0;
     background: var(--background);
-    /* overflow: hidden; */
+    /* overflow:hidden; */
     transition: transform 0.3s ease-in-out;
   }
   
   .slideIn {
     transform: translateX(0);
+    
   }
   
-  .hidden {
+  .nav ul.hidden {
     display: none;
     transform: translateX(100%); /* Initially, set it to be off-screen */
   }
