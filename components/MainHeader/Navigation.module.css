@@ -26,9 +26,10 @@
     height: fit-content;
     padding: 1rem .5rem;
     text-align: right;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
     position: absolute;
-    bottom: -3rem;
+    bottom: -4rem;
     right: 0;
     background: var(--background);
     /* overflow: hidden; */
