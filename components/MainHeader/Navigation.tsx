@@ -2,8 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import NavLink from "./NavLink";
 import styles from "./Navigation.module.css";
-import Image from "next/image";
-import logoImg from "../../public/images/logo.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +14,7 @@ export default function Navigation() {
     };
   }, []);
 
-  function handleBurgerClick() {
+  function toggleDrawer() {
     setIsOpen((state) => !state);
   }
 
@@ -30,7 +28,7 @@ export default function Navigation() {
     <nav className={styles.nav} ref={navRef}>
       <div
         className={styles.nav_burger}
-        onClick={handleBurgerClick}
+        onClick={toggleDrawer}
         role="toggle navigation"
       >
         &#8801;
@@ -51,11 +49,14 @@ export default function Navigation() {
         <li className={styles.drawer_heading}>
           {/* <Image src={logoImg.src} alt="logo" width={50} height={50} priority /> */}
           TIME TO COOK
+          <button className={styles.btn_close} onClick={toggleDrawer}>
+            X
+          </button>
         </li>
-        <li onClick={handleBurgerClick}>
+        <li onClick={toggleDrawer}>
           <NavLink href="/meals">Browse meals</NavLink>
         </li>
-        <li onClick={handleBurgerClick}>
+        <li onClick={toggleDrawer}>
           <NavLink href="/community">Community</NavLink>
         </li>
       </ul>
