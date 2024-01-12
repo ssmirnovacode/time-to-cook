@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import NavLink from "./NavLink";
 import styles from "./Navigation.module.css";
+import Image from "next/image";
+import logoImg from "../../public/images/logo.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +48,10 @@ export default function Navigation() {
           isOpen ? styles.slideIn : styles.hidden
         }`}
       >
+        <li className={styles.drawer_heading}>
+          {/* <Image src={logoImg.src} alt="logo" width={50} height={50} priority /> */}
+          TIME TO COOK
+        </li>
         <li onClick={handleBurgerClick}>
           <NavLink href="/meals">Browse meals</NavLink>
         </li>
